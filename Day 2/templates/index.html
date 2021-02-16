@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Hello Welcome To Pro Tuple</h1>
+    <div class="container mt-4">
+        <div class="chart" id="jsonFormatGraph">
+            <script>
+                function drawPlotlyGraph(graphs) {
+                    Plotly.plot('jsonFormatGraph', graphs, {});
+                }
+                var graphs = {{ graphJSON | safe }};
+                drawPlotlyGraph(graphs);
+            </script>
+        </div>
+    </div>
+{% endblock %}
